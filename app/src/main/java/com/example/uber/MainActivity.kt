@@ -1,5 +1,6 @@
 package com.example.uber
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -152,5 +153,9 @@ class MainActivity : AppCompatActivity() {
         orden.deli = del
         ord.add(orden)
         Log.i("somethin", ord.toString() )
+        val intento = Intent(this, resultado::class.java)
+        intento.putExtra("subtotal",suma)
+
+        startActivity(intento)
     }
 }
